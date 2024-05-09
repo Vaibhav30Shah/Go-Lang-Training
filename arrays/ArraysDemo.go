@@ -33,5 +33,37 @@ func ArraysDemo() {
 
 	//multi dimensional array
 	arr5 := [3][][2]int{}
-	fmt.Printf("arr5: %#v", arr5)
+	fmt.Printf("arr5: %#v\n", arr5)
+
+	//array copy
+	arr6 := [3]int{1, 2, 3}
+	//arr7 := arr6
+	var arr7 = [3]int{}
+	arr7 = arr6 //no copy created
+	//arr7:=arr6 //no copy is created
+	fmt.Printf("arr6==arr7? %v\n", arr6 == arr7) //true
+	arr6[0] = -1                                 //changing in arr6 will not change in arr7
+	fmt.Printf("arr6==arr7? %v\n", arr6 == arr7) //false
+
+	//array keyed elements
+	//we can specify the elements at particular indexes.
+	arr8 := [3]int{
+		2: 0,
+		1: 2,
+		0: 8, //here the comma is mandatory otherwise compiler error
+	}
+	fmt.Printf("arr8: %v\n", arr8)
+
+	//we can also specify only particular index value. For eg only for index 2, rest will be 0(in case of int or float), nil in case of String and false in bool
+	arr9 := [3]string{2: "hi"}
+	fmt.Printf("arr9: %v\n", arr9)
+
+	//if we specify some indexes and not all, the unspecified indexes will be added at the last(after the index of its current predescessor in case of ...)
+	arr10 := [...]int{
+		0: 10,
+		2, //at arr10[1]
+		//2, //error becoz we have no index between 1 and 2
+		2: 100,
+	}
+	fmt.Printf("arr10: %#v\n", arr10)
 }

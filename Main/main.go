@@ -1,7 +1,7 @@
 package main
 
 import (
-	"GoTraining/arrays"
+	"GoTraining/goroutines"
 	"fmt"
 	_ "fmt"
 )
@@ -17,5 +17,16 @@ func main() {
 	//flow_control.IfElseIfDemo()
 	//flow_control.ForLoopDemo()
 	//flow_control.SwitchDemo()
-	arrays.ArraysDemo()
+	//arrays.ArraysDemo()
+	//slices.SliceDemo()
+	//slices.BackingArray()
+	//strings.StringsDemo()
+	//maps.MapsDemo()
+	//structs.StructDemo()
+	//functions.FunctionDemo()
+	//functions.DeferStatement()
+	//pointers.PointerDemo()
+	//methods.MethodDemo()
+	//interfaces.InterfaceDemo()
+	goroutines.GoRoutineDemo()
 }
