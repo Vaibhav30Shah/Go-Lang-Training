@@ -1,9 +1,9 @@
 package main
 
 import (
-	"GoTraining/goroutines"
 	"fmt"
 	_ "fmt"
+	"time"
 )
 
 func main() {
@@ -28,5 +28,27 @@ func main() {
 	//pointers.PointerDemo()
 	//methods.MethodDemo()
 	//interfaces.InterfaceDemo()
-	goroutines.GoRoutineDemo()
+	//goroutines.GoRoutineDemo()
+	//concurrency.MainUrlChecker()
+	//concurrency.RaceCondition()
+	//concurrency.Mutexes()
+	//concurrency.ChannelDemo()
+	//concurrency.ChannelSimple()
+	size := 1000000
+	values1 := make([]int32, size)
+	st1 := time.Now().UnixMilli()
+	for index := 0; index < size; index++ {
+		values1[index] = int32(index)
+	}
+	et1 := time.Now().UnixMilli()
+	t1 := et1 - st1
+	var values2 []int32
+	st2 := time.Now().UnixMilli()
+	for index := 0; index < size; index++ {
+		values2 = append(values2, int32(index))
+	}
+	et2 := time.Now().UnixMilli()
+	t2 := et2 - st2
+	fmt.Println(t1)
+	fmt.Println(t2)
 }
